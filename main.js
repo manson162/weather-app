@@ -16,8 +16,9 @@ window.onload = function () {
           .then(
             (res) => {
               console.log(res)
-              document.getElementById("temp").innerHTML = res.main['temp'] + " °C";
-              document.getElementById("location").innerHTML = res.name + ", GB ";
+              document.getElementById("temp").innerHTML = res.main.temp + " °C";
+              document.getElementById("location").innerHTML = res.name + ", " + res.sys.country;
+              document.getElementById("weather").innerHTML = res.weather[0].main;
             })
 
 
