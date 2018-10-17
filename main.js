@@ -19,6 +19,7 @@ window.onload = function () {
               document.getElementById("temp").innerHTML = res.main.temp + " °C";
               document.getElementById("location").innerHTML = res.name + ", " + res.sys.country;
               document.getElementById("weather").innerHTML = res.weather[0].main;
+              document.getElementById("img").src = res.weather[0].icon;
             })
 
 
