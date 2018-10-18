@@ -23,28 +23,33 @@ window.onload = function () {
               document.getElementById("weather").innerHTML = res.weather[0].main;
               document.getElementById("img").src = res.weather[0].icon;
               tempValue = document.getElementById("temp").innerHTML = res.main.temp;
-              
+
             })
 
 
       }
 
     )
+  } else {
+    document.getElementById("location").innerHTML = "Sorry, as we can't see your location we can't see your local weather";
   }
 
 }
+
+
 document.getElementById("unit").innerHTML = " °C";
 var unit = document.getElementById("unit").innerHTML;
 
-function convertUnit(){
+function convertUnit() {
   if (unit == " °C") {
-  
-  document.getElementById("unit").innerHTML = " °F";
-  document.getElementById("temp").innerHTML = (tempValue *1.8) + 32; 
-  unit = " °F";
 
-} else if (unit == " °F"){
-  document.getElementById("unit").innerHTML = " °C";
-  document.getElementById("temp").innerHTML = tempValue;
-  unit = " °C";
-}}
+    document.getElementById("unit").innerHTML = " °F";
+    document.getElementById("temp").innerHTML = (tempValue * 1.8) + 32;
+    unit = " °F";
+
+  } else if (unit == " °F") {
+    document.getElementById("unit").innerHTML = " °C";
+    document.getElementById("temp").innerHTML = tempValue;
+    unit = " °C";
+  }
+}
