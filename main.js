@@ -16,10 +16,11 @@ window.onload = function () {
           .then(
             (res) => {
               console.log(res)
-              document.getElementById("temp").innerHTML = res.main.temp + " °C";
+              document.getElementById("temp").innerHTML = res.main.temp;
               document.getElementById("location").innerHTML = res.name + ", " + res.sys.country;
               document.getElementById("weather").innerHTML = res.weather[0].main;
               document.getElementById("img").src = res.weather[0].icon;
+              
             })
 
 
@@ -29,3 +30,16 @@ window.onload = function () {
   }
 
 }
+document.getElementById("unit").innerHTML = " °C";
+var unit = document.getElementById("unit").innerHTML;
+
+function convertUnit(){
+  if (unit == " °C") {
+  
+  document.getElementById("unit").innerHTML = " °F";
+  unit = " °F";
+
+} else if (unit == " °F"){
+  document.getElementById("unit").innerHTML = " °C";
+  unit = " °C";
+}}

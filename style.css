@@ -24,3 +24,9 @@ p {
 #data {
     margin-top: 10%;
 }
+#tempContainer {
+    display: flex;
+}
+#temp {
+    margin-right: 15px;
+}
